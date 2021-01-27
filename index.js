@@ -96,6 +96,7 @@ function Airplane(name) {
   }
   
   const vroomCar = new Car('tesla', 30);
+
   /*
     TASK 3
       - Write a Baby constructor subclassing Person.
@@ -103,18 +104,22 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+ function Baby(name, age, favoriteToy) {
+   Person.call(this, name, age);
+   this.favoriteToy = favoriteToy;
   }
- 
+  Baby.prototype = Object.create(Person.prototype);
+  Baby.prototype.play = function(){
+    return (`Playing with ${this.favoriteToy}`);
+  }
   
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. is it called by new
+    2. is it called by call/apply/bind
+    3. is function called as a method
+    4. is function called within the global scope, also is strict mode on
   */
   
   
