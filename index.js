@@ -61,7 +61,7 @@ function Airplane(name) {
 
   const myNameJeff = new Person('wahoo', 24);
 
-  console.log(myNameJeff.toString());
+  // console.log(myNameJeff.toString());
  
 
   
@@ -92,10 +92,10 @@ function Airplane(name) {
   }
 
   Car.prototype.fill = function(gallons){
-    this.tank = (tank + gallons);
+    this.tank = (this.tank + gallons);
   }
   
-  
+  const vroomCar = new Car('tesla', 30);
   /*
     TASK 3
       - Write a Baby constructor subclassing Person.
